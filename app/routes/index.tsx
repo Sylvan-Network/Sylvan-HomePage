@@ -41,7 +41,7 @@ function ResponsiveAppBar() {
           </Grid>
           <Grid item xs={5} md={5}>
             <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?fit=crop&auto=format"
               alt="图片"
             />
           </Grid>
