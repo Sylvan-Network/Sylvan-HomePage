@@ -9,9 +9,7 @@ import {
 } from "@remix-run/react";
 import styles from "./tailwind.css";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles },
-];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -25,9 +23,6 @@ export default function App() {
       <head>
         <Meta />
         <Links />
-        {typeof document === "undefined"
-          ? "__STYLES__"
-          : null}
       </head>
       <body>
         <Outlet />
