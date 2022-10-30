@@ -1,0 +1,17 @@
+.PrimaryButton {
+  /* ... */
+}
+
+.TileGrid {
+  /* ... */
+}
+
+/* or scope with data attributes to avoid concatenating
+   className props, but it's really up to you */
+[data-primary-button] {
+  /* ... */
+}
+
+[data-tile-grid] {
+  /* ... */
+}
