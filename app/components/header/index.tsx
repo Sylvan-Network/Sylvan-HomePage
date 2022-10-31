@@ -119,6 +119,7 @@ const Header = () => {
                 <Button
                   key={page}
                   onClick={() => handleCloseNavMenu(page)}
+                  // variant="contained"
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
@@ -126,14 +127,14 @@ const Header = () => {
               ))}
             </Box>
           </>
-          <Button
+          <IconButton
             onClick={() => {
               window.open("https://github.com/WeSui/SuiTalk");
             }}
-            sx={{ my: 2, color: "white", display: "block" }}
+            sx={{ color: "white" }}
           >
             <GitHubIcon />
-          </Button>
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
