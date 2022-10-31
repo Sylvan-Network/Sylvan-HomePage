@@ -1,52 +1,123 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Header from "~/components/header";
 import { Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Info from "~/components/info";
 
-const Item = styled(Paper)(({ theme }) => {
+const Div = styled(Box)(({ theme, style }) => {
   return {
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    boxShadow: "none",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    height: "100%",
+    ...style,
   };
 });
 
-const Div = styled(Item)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  height: "100%",
-}));
+const DivDark = styled(Div)(({ theme, style }) => {
+  return {
+    backgroundColor: "#000",
+    color: "#fff",
+    ...style,
+  };
+});
+
+const list1 = [
+  {
+    children: (
+      <Div style={{ paddingRight: 105, paddingLeft: "8rem" }}>
+        <Typography align="left" variant="h3" component="h3" gutterBottom>
+          Private, Secure Communication
+        </Typography>
+        <Typography align="left" paragraph>
+          Status is a secure messaging app, crypto wallet, and Web3 browser
+          built with state of the art technology.
+        </Typography>
+      </Div>
+    ),
+    colomn: 6,
+  },
+  {
+    children: (
+      <DivDark>
+        <img
+          src="https://status.im/img/teaser-image-2x.png"
+          alt="图片"
+          style={{ position: "relative", left: -105 }}
+        />
+      </DivDark>
+    ),
+    colomn: 6,
+  },
+];
+
+const list2 = [
+  {
+    children: (
+      <DivDark style={{ padding: "8rem" }}>
+        <Typography align="left" variant="h3" component="h3" gutterBottom>
+          Message, Browse, Transact on your Terms
+        </Typography>
+        <Typography align="left" paragraph>
+          Integrated into one powerful super app for private secure
+          communication.
+        </Typography>
+      </DivDark>
+    ),
+    colomn: 6,
+  },
+  {
+    children: (
+      <img src="https://status.im/img/teaser-image-2x.png" alt="图片" />
+    ),
+    colomn: 6,
+  },
+];
+
+const list3 = [
+  {
+    children: (
+      <img src="https://status.im/img/teaser-image-2x.png" alt="图片" />
+    ),
+    colomn: 6,
+  },
+  {
+    children: (
+      <DivDark style={{ padding: "8rem" }}>
+        <Typography align="left" variant="h4" component="h3" gutterBottom>
+          Borderless Crypto Payments
+        </Typography>
+        <Typography align="left" variant="h3" component="h3" gutterBottom>
+          Secure Crypto Wallet
+        </Typography>
+        <Typography align="left" paragraph>
+          Safely send, store and receive cryptocurrencies including ERC20 and
+          ERC721 tokens with the Status crypto wallet. Only you hold the keys to
+          your funds. Status' intuitive design protects you and your funds from
+          attacks.
+        </Typography>
+      </DivDark>
+    ),
+    colomn: 6,
+  },
+];
 
 function ResponsiveAppBar() {
   return (
     <>
       <Header />
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container>
-          <Grid item xs={7} md={7}>
-            <Div>
-              <Typography align="left" variant="h1" component="h2">
-                xxx
-              </Typography>
-              <Typography align="left" paragraph>
-                hgfhgfhg
-              </Typography>
-            </Div>
-          </Grid>
-          <Grid item xs={5} md={5}>
-            <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?fit=crop&auto=format"
-              alt="图片"
-            />
-          </Grid>
-        </Grid>
-      </Box>
+      <div>
+        <Info list={list1} />
+        <Info list={list2} />
+        <Info list={list3} />
+      </div>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -8,6 +9,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#4360DF",
+    },
+  },
+});
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -42,10 +51,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <ThemeProvider theme={theme}>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </ThemeProvider>
       </body>
     </html>
   );
