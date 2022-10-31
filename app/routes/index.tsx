@@ -32,7 +32,7 @@ const DivDark = styled(Div)(({ theme, style }) => {
 const list1 = [
   {
     children: (
-      <Div style={{ paddingRight: 105, paddingLeft: "8rem" }}>
+      <Div style={{ padding: "8rem" }}>
         <Typography align="left" variant="h3" component="h3" gutterBottom>
           Private, Secure Communication
         </Typography>
@@ -50,7 +50,7 @@ const list1 = [
         <img
           src="https://status.im/img/teaser-image-2x.png"
           alt="图片"
-          style={{ position: "relative", left: -105 }}
+          className="translate-x-[-8rem]"
         />
       </DivDark>
     ),
@@ -75,7 +75,11 @@ const list2 = [
   },
   {
     children: (
-      <img src="https://status.im/img/teaser-image-2x.png" alt="图片" />
+      <img
+        src="https://status.im/img/teaser-image-2x.png"
+        alt="图片"
+        className="translate-x-[-8rem]"
+      />
     ),
     colomn: 6,
   },
@@ -84,7 +88,11 @@ const list2 = [
 const list3 = [
   {
     children: (
-      <img src="https://status.im/img/teaser-image-2x.png" alt="图片" />
+      <img
+        src="https://status.im/img/teaser-image-2x.png"
+        alt="图片"
+        className="translate-x-[8rem]"
+      />
     ),
     colomn: 6,
   },
