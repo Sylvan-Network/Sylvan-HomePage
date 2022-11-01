@@ -4,8 +4,11 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Info from "~/components/info";
+import { useTheme } from "@mui/material/styles";
+import StandardImageList from "~/components/home/imgList";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 
-const Div = styled(Box)(({ theme, style }) => {
+const Div = styled(Box)(({ theme, style, className }) => {
   return {
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
@@ -18,29 +21,72 @@ const Div = styled(Box)(({ theme, style }) => {
     justifyContent: "center",
     height: "100%",
     ...style,
+    className,
   };
 });
 
-const DivDark = styled(Div)(({ theme, style }) => {
+const DivDark = styled(Div)(({ theme, style, className }) => {
   return {
-    backgroundColor: "#000",
+    backgroundColor: "#140918",
     color: "#fff",
     ...style,
+    className,
   };
 });
 
 const list1 = [
   {
     children: (
-      <Div style={{ padding: "8rem" }}>
+      <DivDark style={{ padding: "4rem" }}>
         <Typography align="left" variant="h3" component="h3" gutterBottom>
-          Private, Secure Communication
+          Build <span className="text-[#f790f3]">decentralized </span>
+          social experiences with Orbis Protocol
         </Typography>
         <Typography align="left" paragraph>
-          Status is a secure messaging app, crypto wallet, and Web3 browser
-          built with state of the art technology.
+          Integrated into one powerful super app for private secure
+          communication.
         </Typography>
-      </Div>
+      </DivDark>
+    ),
+    colomn: 6,
+  },
+  {
+    children: (
+      <DivDark style={{ paddingLeft: 110 }}>
+        <Typography align="left" variant="body2" component="span">
+          Start sharing via Orbis Protocol:
+        </Typography>
+        <TextareaAutosize
+          aria-label="minimum height"
+          minRows={3}
+          style={{
+            width: 368,
+            background:
+              "linear-gradient(180deg,rgba(186,233,233,.062),rgba(201,133,255,.28))",
+            border: "1px solid #44416d",
+            borderRadius: 15,
+            height: 100,
+          }}
+        />
+      </DivDark>
+    ),
+    colomn: 6,
+  },
+];
+
+const list2 = [
+  {
+    children: (
+      <DivDark style={{ padding: "8rem" }}>
+        <Typography align="left" variant="h3" component="h3" gutterBottom>
+          Build <span className="text-[#f790f3]">decentralized</span>
+          social experiences with Orbis Protocol
+        </Typography>
+        <Typography align="left" paragraph>
+          Integrated into one powerful super app for private secure
+          communication.
+        </Typography>
+      </DivDark>
     ),
     colomn: 6,
   },
@@ -58,73 +104,16 @@ const list1 = [
   },
 ];
 
-const list2 = [
-  {
-    children: (
-      <DivDark style={{ padding: "8rem" }}>
-        <Typography align="left" variant="h3" component="h3" gutterBottom>
-          Message, Browse, Transact on your Terms
-        </Typography>
-        <Typography align="left" paragraph>
-          Integrated into one powerful super app for private secure
-          communication.
-        </Typography>
-      </DivDark>
-    ),
-    colomn: 6,
-  },
-  {
-    children: (
-      <img
-        src="https://status.im/img/teaser-image-2x.png"
-        alt="图片"
-        className="translate-x-[-8rem]"
-      />
-    ),
-    colomn: 6,
-  },
-];
-
-const list3 = [
-  {
-    children: (
-      <img
-        src="https://status.im/img/teaser-image-2x.png"
-        alt="图片"
-        className="translate-x-[8rem]"
-      />
-    ),
-    colomn: 6,
-  },
-  {
-    children: (
-      <DivDark style={{ padding: "8rem" }}>
-        <Typography align="left" variant="h4" component="h3" gutterBottom>
-          Borderless Crypto Payments
-        </Typography>
-        <Typography align="left" variant="h3" component="h3" gutterBottom>
-          Secure Crypto Wallet
-        </Typography>
-        <Typography align="left" paragraph>
-          Safely send, store and receive cryptocurrencies including ERC20 and
-          ERC721 tokens with the Status crypto wallet. Only you hold the keys to
-          your funds. Status' intuitive design protects you and your funds from
-          attacks.
-        </Typography>
-      </DivDark>
-    ),
-    colomn: 6,
-  },
-];
-
 function ResponsiveAppBar() {
+  const theme = useTheme();
+  console.log(theme);
   return (
     <>
       <Header />
-      <div>
+      <div className={`px-[110px] bg-[${theme.palette.primary.main}]`}>
         <Info list={list1} />
+        <StandardImageList />
         <Info list={list2} />
-        <Info list={list3} />
       </div>
     </>
   );

@@ -13,7 +13,7 @@ import styles from "./tailwind.css";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#4360DF",
+      main: "#140918",
     },
   },
 });
