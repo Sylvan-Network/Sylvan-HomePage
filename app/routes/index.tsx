@@ -10,11 +10,10 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 
 const Div = styled(Box)(({ theme, style, className }) => {
   return {
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+    // color: theme.palette.text.secondary,
     boxShadow: "none",
     display: "flex",
     flexDirection: "column",
@@ -22,22 +21,14 @@ const Div = styled(Box)(({ theme, style, className }) => {
     height: "100%",
     ...style,
     className,
-  };
-});
-
-const DivDark = styled(Div)(({ theme, style, className }) => {
-  return {
-    backgroundColor: "#140918",
     color: "#fff",
-    ...style,
-    className,
   };
 });
 
 const list1 = [
   {
     children: (
-      <DivDark style={{ padding: "4rem" }}>
+      <Div style={{ padding: "4rem" }}>
         <Typography align="left" variant="h3" component="h3" gutterBottom>
           Build <span className="text-[#f790f3]">decentralized </span>
           social experiences with Orbis Protocol
@@ -46,13 +37,13 @@ const list1 = [
           Integrated into one powerful super app for private secure
           communication.
         </Typography>
-      </DivDark>
+      </Div>
     ),
     colomn: 6,
   },
   {
     children: (
-      <DivDark style={{ paddingLeft: 110 }}>
+      <Div style={{ paddingLeft: 110 }}>
         <Typography align="left" variant="body2" component="span">
           Start sharing via Orbis Protocol:
         </Typography>
@@ -68,7 +59,7 @@ const list1 = [
             height: 100,
           }}
         />
-      </DivDark>
+      </Div>
     ),
     colomn: 6,
   },
@@ -77,7 +68,7 @@ const list1 = [
 const list2 = [
   {
     children: (
-      <DivDark style={{ padding: "8rem" }}>
+      <Div style={{ padding: "8rem" }}>
         <Typography align="left" variant="h3" component="h3" gutterBottom>
           Build <span className="text-[#f790f3]">decentralized</span>
           social experiences with Orbis Protocol
@@ -86,19 +77,19 @@ const list2 = [
           Integrated into one powerful super app for private secure
           communication.
         </Typography>
-      </DivDark>
+      </Div>
     ),
     colomn: 6,
   },
   {
     children: (
-      <DivDark>
+      <Div>
         <img
           src="https://status.im/img/teaser-image-2x.png"
           alt="图片"
           className="translate-x-[-8rem]"
         />
-      </DivDark>
+      </Div>
     ),
     colomn: 6,
   },
