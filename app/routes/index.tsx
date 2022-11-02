@@ -25,6 +25,7 @@ const Div = styled(Box)(({ theme, style, className }) => {
     justifyContent: "center",
     height: "100%",
     color: "#fff",
+    backgroundColor: theme.palette.primary.main,
     ...style,
     className,
   };
@@ -102,7 +103,8 @@ function ResponsiveAppBar() {
       <WalletProvider supportedWallets={supportedWallets}>
         <Header />
         <div
-          className={`min-h-screen px-[110px] bg-[${theme.palette.primary.main}]`}
+          style={{ backgroundColor: theme.palette.primary.main }}
+          className={`min-h-screen px-[110px]`}
         >
           <Info list={list1} />
           <StandardImageList />

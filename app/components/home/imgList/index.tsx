@@ -6,7 +6,7 @@ import img1 from "./home-data-ownership-icon.png";
 import img2 from "./home-decentralized-icon.png";
 import img3 from "./home-multichain.png";
 import img4 from "./home-sdk-icon.png";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 
 const ImgList = styled(ImageList)(({ theme, style, className }) => {
   return {
@@ -23,8 +23,12 @@ const ImgListItem = styled(ImageListItem)(({ theme, style, className }) => {
 });
 
 export default function StandardImageList() {
+  const theme = useTheme();
   return (
-    <div className="bg-[#140918] text-center pt-[110px]">
+    <div
+      style={{ backgroundColor: theme.palette.primary.main }}
+      className={`text-center pt-[110px]`}
+    >
       <ImgList
         style={{ width: "80%", margin: "0 auto" }}
         cols={4}
