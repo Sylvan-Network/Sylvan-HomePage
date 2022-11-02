@@ -7,6 +7,16 @@ import Info from "~/components/info";
 import { useTheme } from "@mui/material/styles";
 import StandardImageList from "~/components/home/imgList";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
+import {
+  WalletProvider,
+  getAllWallets, // support all the wallets
+  getDefaultWallets, // if you only support Sui wallet
+  ConnectButton,
+} from "@suiet/wallet-kit";
+
+const supportedWallets = getAllWallets();
+
+console.log(supportedWallets);
 
 const Div = styled(Box)(({ theme, style, className }) => {
   return {
@@ -39,7 +49,7 @@ const list1 = [
         </Typography>
       </Div>
     ),
-    colomn: 6,
+    colomn: 7,
   },
   {
     children: (
@@ -59,9 +69,14 @@ const list1 = [
             height: 100,
           }}
         />
+        <div className="mt-[20px]">
+          <ConnectButton className="w-[100px] border-solid border-white border-2 px-2 py-2 rounded-full">
+            Connect
+          </ConnectButton>
+        </div>
       </Div>
     ),
-    colomn: 6,
+    colomn: 5,
   },
 ];
 
@@ -99,7 +114,7 @@ function ResponsiveAppBar() {
   const theme = useTheme();
   console.log(theme);
   return (
-    <>
+    <WalletProvider supportedWallets={supportedWallets}>
       <Header />
       <div
         className={`px-[110px] bg-[${theme.palette.primary.main}] min-h-screen`}
@@ -108,7 +123,7 @@ function ResponsiveAppBar() {
         <StandardImageList />
         {/* <Info list={list2} /> */}
       </div>
-    </>
+    </WalletProvider>
   );
 }
 export default ResponsiveAppBar;
