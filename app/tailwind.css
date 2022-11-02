@@ -638,6 +638,10 @@ video {
   display: grid;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }

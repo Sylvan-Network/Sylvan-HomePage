@@ -101,10 +101,12 @@ function ResponsiveAppBar() {
   return (
     <>
       <Header />
-      <div className={`px-[110px] bg-[${theme.palette.primary.main}]`}>
+      <div
+        className={`px-[110px] bg-[${theme.palette.primary.main}] min-h-screen`}
+      >
         <Info list={list1} />
         <StandardImageList />
-        <Info list={list2} />
+        {/* <Info list={list2} /> */}
       </div>
     </>
   );
