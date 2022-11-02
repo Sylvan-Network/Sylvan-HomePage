@@ -6,12 +6,16 @@ import Box from "@mui/material/Box";
 import Info from "~/components/info";
 import StandardImageList from "~/components/home/imgList";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
+import type { LinksFunction } from "@remix-run/node";
 import {
   WalletProvider,
   getAllWallets, // support all the wallets
   ConnectButton,
 } from "@suiet/wallet-kit";
 import type { WalletInstance } from "@suiet/wallet-kit/dist/adapter/KitAdapter";
+import styles from "@suiet/wallet-kit/style.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 const Div = styled(Box)(({ theme, style, className }) => {
   return {
@@ -42,9 +46,9 @@ const list1 = [
         <Button
           style={{
             width: 156,
-            background: "linear-gradient(135deg,#f790bb 44.02%,#b971ee 90.66%)",
             border: "1px solid #d27eda",
             color: "#101016",
+            background: "linear-gradient(135deg,#f790bb 44.02%,#b971ee 90.66%)",
           }}
         >
           lanuch app
@@ -74,7 +78,17 @@ const list1 = [
           defaultValue="Hello, Sui-nami!"
         />
         <div className="mt-[20px]">
-          <ConnectButton className="w-[100px] border-solid border-white border-2 px-2 py-2 rounded-full">
+          <ConnectButton
+            style={{
+              width: 150,
+              height: 38,
+              padding: "6px 8px",
+              background:
+                "linear-gradient(135deg,#f790bb 44.02%,#b971ee 90.66%)",
+              border: "1px solid #d27eda",
+              color: "#101016",
+            }}
+          >
             Connect
           </ConnectButton>
         </div>
