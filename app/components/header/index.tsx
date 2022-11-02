@@ -12,10 +12,8 @@ import React from "react";
 import AdbIcon from "@mui/icons-material/Adb";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useNavigate } from "react-router-dom";
-import img from "./demo.jpg";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
   const navigate = useNavigate();

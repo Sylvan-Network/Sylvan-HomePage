@@ -44,7 +44,6 @@ export default function StandardImageList() {
             />
             <ImageListItemBar
               title={item.title}
-              subtitle={<span>by: {item.author}</span>}
               position="below"
               color="#fff"
             />
@@ -59,21 +58,17 @@ const itemData = [
   {
     img: img1,
     title: "Decentralized",
-    author: "@bkristastucchio",
   },
   {
     img: img2,
     title: "Data Ownership",
-    author: "@rollelflex_graphy726",
   },
   {
     img: img3,
     title: "Easy to build on",
-    author: "@helloimnik",
   },
   {
     img: img4,
     title: "Multi-chain",
-    author: "@nolanissac",
   },
 ];
