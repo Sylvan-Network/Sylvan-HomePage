@@ -25,10 +25,7 @@ const ImgListItem = styled(ImageListItem)(({ theme, style, className }) => {
 export default function StandardImageList() {
   const theme = useTheme();
   return (
-    <div
-      style={{ backgroundColor: theme.palette.primary.main }}
-      className={`text-center pt-[110px]`}
-    >
+    <div className={`text-center pt-[110px]`}>
       <ImgList
         style={{ width: "80%", margin: "0 auto" }}
         cols={4}

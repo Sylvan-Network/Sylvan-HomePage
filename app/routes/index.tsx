@@ -14,6 +14,7 @@ import {
 } from "@suiet/wallet-kit";
 import type { WalletInstance } from "@suiet/wallet-kit/dist/adapter/KitAdapter";
 import styles from "@suiet/wallet-kit/style.css";
+import bgImg from "../img/2.png";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -29,7 +30,7 @@ const Div = styled(Box)(({ theme, style, className }) => {
     justifyContent: "center",
     height: "100%",
     color: "#fff",
-    backgroundColor: theme.palette.primary.main,
+    // backgroundColor: theme.palette.primary.main,
     ...style,
     className,
   };
@@ -110,18 +111,19 @@ function ResponsiveAppBar() {
     setSupportedWallets(supported);
   }, []);
 
-  console.log(supportedWallets);
+  console.log(bgImg);
 
   return (
     <>
       <WalletProvider supportedWallets={supportedWallets}>
-        <Header />
         <div
-          style={{ backgroundColor: theme.palette.primary.main }}
-          className={`min-h-screen px-[110px]`}
+          style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }}
         >
-          <Info list={list1} />
-          <StandardImageList />
+          <Header />
+          <div className={`min-h-screen px-[110px]`}>
+            <Info list={list1} />
+            <StandardImageList />
+          </div>
         </div>
       </WalletProvider>
     </>
