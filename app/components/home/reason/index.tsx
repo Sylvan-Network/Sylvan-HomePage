@@ -33,17 +33,15 @@ const Reason = () => {
             component="p"
             gutterBottom
           >
-            当个⼈数据成了各种服务商的⼤数据资产,被源源不断的被出售,被信息骚扰.
-            也因为中⼼化的服务商服务器单⼀,导致个⼈数据可能被盗,
+            当个⼈数据成了各种服务商的⼤数据资产,被源源不断的被出售
           </Typography>
           <Typography
-            className={`absolute w-[100vw] top-[${24}px]`}
+            className={`absolute w-[100vw] top-[24px]`}
             variant="body1"
             component="p"
             gutterBottom
           >
-            当个⼈数据成了各种服务商的⼤数据资产,被源源不断的被出售,被信息骚扰.
-            也因为中⼼化的服务商服务器单⼀,导致个⼈数据可能被盗,
+            被信息骚扰. 也因为中⼼化的服务商服务器单⼀,导致个⼈数据可能被盗,
           </Typography>
         </div>
       </div>
