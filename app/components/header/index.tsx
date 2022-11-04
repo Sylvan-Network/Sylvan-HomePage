@@ -12,7 +12,7 @@ import React from "react";
 import AdbIcon from "@mui/icons-material/Adb";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useNavigate } from "react-router-dom";
-import logoPng from "./logo.png";
+import logoPng from "../../img/logo.png";
 
 const pages = ["Home", "How it works", "Documents"];
 
@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   const handleCloseNavMenu = (page: string) => {
-    navigate("/posts");
+    // navigate("/posts");
   };
 
   return (
