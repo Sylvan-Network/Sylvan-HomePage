@@ -28,8 +28,9 @@ const Info = () => {
         style={{
           backgroundImage: `url(${ball})`,
           backgroundSize: "50%",
+          backgroundPosition: "20% 50%",
         }}
-        className="bg-no-repeat bg-center flex w-[60%] pl-[20%]"
+        className="bg-no-repeat bg-center flex w-[60%] pl-[10%]"
       >
         <Typography align="left" variant="h3" component="h3" gutterBottom>
           Sylvan is a <span className="text-[#f790f3]">decentralized</span>{" "}
