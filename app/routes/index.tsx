@@ -1,15 +1,11 @@
 import * as React from "react";
 import Header from "~/components/header";
-import { Button, Typography } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 import Info from "~/components/info";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
 import type { LinksFunction } from "@remix-run/node";
 import {
   WalletProvider,
   getAllWallets, // support all the wallets
-  ConnectButton,
 } from "@suiet/wallet-kit";
 import type { WalletInstance } from "@suiet/wallet-kit/dist/adapter/KitAdapter";
 import styles from "@suiet/wallet-kit/style.css";
@@ -36,6 +32,7 @@ function ResponsiveAppBar() {
     <>
       <WalletProvider supportedWallets={supportedWallets}>
         <div
+          className="max-w-[1680px]"
           style={{
             backgroundImage: `url(${bgImg})`,
             backgroundSize: "100vw",
