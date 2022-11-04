@@ -12,9 +12,9 @@ import React from "react";
 import AdbIcon from "@mui/icons-material/Adb";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useNavigate } from "react-router-dom";
-import logoSvg from "./logo.svg";
+import logoPng from "./logo.png";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "How it works", "Documents"];
 
 const Header = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Header = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <img src={logoSvg} className="w-[85px]" />
+          <img src={logoPng} className="w-[85px]" />
           {/* 小屏 */}
           <>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

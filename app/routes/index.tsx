@@ -4,7 +4,6 @@ import { Button, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Info from "~/components/info";
-import StandardImageList from "~/components/home/imgList";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import type { LinksFunction } from "@remix-run/node";
 import {
@@ -14,7 +13,8 @@ import {
 } from "@suiet/wallet-kit";
 import type { WalletInstance } from "@suiet/wallet-kit/dist/adapter/KitAdapter";
 import styles from "@suiet/wallet-kit/style.css";
-import bgImg from "../img/2.png";
+import bgImg from "../img/bg1.png";
+import Reason from "~/components/home/reason";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -111,19 +111,22 @@ function ResponsiveAppBar() {
     setSupportedWallets(supported);
   }, []);
 
-  console.log(bgImg);
-
   return (
     <>
       <WalletProvider supportedWallets={supportedWallets}>
         <div
-          style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }}
+          style={{
+            backgroundImage: `url(${bgImg})`,
+            backgroundSize: "100vw",
+            backgroundColor: "#000000",
+            backgroundRepeat: "no-repeat",
+          }}
         >
           <Header />
           <div className={`min-h-screen px-[110px]`}>
             <Info list={list1} />
-            <StandardImageList />
           </div>
+          <Reason />
         </div>
       </WalletProvider>
     </>
