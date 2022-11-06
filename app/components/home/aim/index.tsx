@@ -8,7 +8,7 @@ const Aim = () => {
       className="min-h-screen bg-center bg-no-repeat flex justify-center items-center text-center"
       style={{
         backgroundImage: `url(${img}), url(${pinkCircle})`,
-        backgroundSize: "50%",
+        backgroundSize: "40%",
         backgroundPosition: "center,right",
       }}
     >
@@ -17,11 +17,15 @@ const Aim = () => {
           Rose Protocol
         </Typography>
         <Typography variant="h5" component="h5" gutterBottom>
-          宪法
+          Constitution
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
-          个⼈信息,即个⼈资产,⽆许可,不授权
-          所有个⼈数据即个⼈资产,由个⼈掌握并保管
+          Personal information, i.e. personal assets, without permission,
+          without authorization.
+        </Typography>
+        <Typography variant="body1" component="p" gutterBottom>
+          All personal data are personal assets, which are mastered and kept by
+          individuals.
         </Typography>
       </div>
     </div>

@@ -20,29 +20,24 @@ const Reason = () => {
           backgroundSize: "100%",
         }}
       >
-        <Typography variant="h6" component="h6" gutterBottom>
-          我们为什么要做
+        <Typography variant="h5" gutterBottom>
+          Why we need
         </Typography>
-        <Typography variant="h6" component="h6" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Rose Protocol
         </Typography>
         <div className="relative">
-          <Typography
-            className="absolute w-[100vw]"
-            variant="body1"
-            component="p"
-            gutterBottom
-          >
-            当个⼈数据成了各种服务商的⼤数据资产,被源源不断的被出售
-          </Typography>
-          <Typography
-            className={`absolute w-[100vw] top-[24px]`}
-            variant="body1"
-            component="p"
-            gutterBottom
-          >
-            被信息骚扰. 也因为中⼼化的服务商服务器单⼀,导致个⼈数据可能被盗,
-          </Typography>
+          <div className="absolute w-[50vw]">
+            <Typography variant="body1" component="p" gutterBottom>
+              Personal data becomes the big data assets of various service
+              providers, it is continuously sold, which leads to people being
+              harassed by information.
+            </Typography>
+            <Typography variant="body1" component="p" gutterBottom>
+              The centralized service provider has a single server, personal
+              data may be stolen.
+            </Typography>
+          </div>
         </div>
       </div>
       <div
